@@ -17,16 +17,69 @@ This repository is the official PyTorch implementation of our CVPR2024 paper "UV
 [2024-03-25] Training & Testing code is available!
 
 ## Experimental Results
-Quantitative comparisons of enhanced video quality on UVEB dataset. In the Memory column, ∗ represents the CPU, while without ∗ represents the GPU. Top 1st, 2nd results are marked in red and blue respectively.
+Quantitative comparisons of enhanced video quality on UVEB dataset. In the Memory column, ∗ represents the CPU, while without ∗ represents the GPU. Top 1st, 2nd results are marked in red and blue respectively.\
 <img width="467" alt="quantitative" src="https://github.com/ck324/ck324.github.io/assets/116191412/165d8c28-b878-4986-8b5d-90884b3d31ca">
 
-Ablation studies of major components in UVE-Net.
+Ablation studies of major components in UVE-Net.\
 <img width="467" alt="ablation" src="https://github.com/ck324/ck324.github.io/assets/116191412/613af18b-12df-4403-929b-3546ada451ec">
 
 
 ## Dependencies
+- Linux (Tested on Ubuntu 18.04)
+
+
 
 ## Get Started
+
+### Pretrained models
+- Models are available in  `'./experiments/model_name'`
+
+### Dataset Organization Form
+If you prepare your own dataset, please follow the following form like UVEB:
+```
+|--dataset  
+    |--blur  
+        |--video 1
+            |--frame 1
+            |--frame 2
+                ：  
+        |--video 2
+            :
+        |--video n
+    |--gt
+        |--video 1
+            |--frame 1
+            |--frame 2
+                ：  
+        |--video 2
+        	:
+        |--video n
+```
+ 
+### Training
+- Download training dataset like above form.
+- Run the following commands:
+```
+Single GPU
+python basicsr/train.py -opt options/train/Deblur/train_Deblur_GOPRO.yml
+Multi-GPUs
+python -m torch.distributed.launch --nproc_per_node=4 --master_port=4321 basicsr/train.py -opt options/train/Deblur/train_Deblur_GOPRO.yml --launcher pytorch
+```
+
+### Testing
+- Models are available in  `'./experiments/'`.
+- Organize your dataset(GOPRO/DVD/BSD) like the above form.
+- Run the following commands:
+```
+python basicsr/test.py -opt options/test/Deblur/test_Deblur_GOPRO.yml
+cd results
+python merge_full.py
+python calculate_psnr.py
+```
+- Before running merge_full.py, you should change the parameters in this file of Line 5,6,7,8.
+- The deblured result will be in `'./results/dataset_name/'`.
+- Before running calculate_psnr.py, you should change the parameters in this file of Line 5,6.
+- We calculate PSNRs/SSIMs by running calculate_psnr.py
 
 
 
