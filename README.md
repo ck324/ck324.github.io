@@ -33,8 +33,8 @@ Visual comparisons with state-of-the-art methods on real underwater scenes.\
 
 ## Dependencies
 - Linux (Tested on Ubuntu 18.04)
-
-
+- python 3.7
+- Install dependent packages :`pip install -r requirements.txt`
 
 ## Get Started
 
