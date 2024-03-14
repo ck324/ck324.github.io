@@ -1,7 +1,8 @@
 # UVE-Net
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/ck324/ck324.github.io/tree/main?tab=MIT-1-ov-file)
-
+[![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/ck324/ck324.github.io/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/pytorch-1.10.0-%237732a8)](https://pytorch.org/)
 
 # UVEB: A Large-scale Benchmark and Baseline Towards Real-World Underwater Video Enhancement
 
