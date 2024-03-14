@@ -27,6 +27,9 @@ Quantitative comparisons of enhanced video quality on UVEB dataset. In the Memor
 Ablation studies of major components in UVE-Net.\
 <img width="467" alt="ablation" src="https://github.com/ck324/ck324.github.io/assets/116191412/613af18b-12df-4403-929b-3546ada451ec">
 
+Visual comparisons with state-of-the-art methods on real underwater scenes.\
+![vision](https://github.com/ck324/ck324.github.io/assets/116191412/9e7f3112-ae98-425a-ace1-71c29958a139)
+
 
 ## Dependencies
 - Linux (Tested on Ubuntu 18.04)
